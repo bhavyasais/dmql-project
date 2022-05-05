@@ -1,7 +1,7 @@
 import React,{Fragment, useEffect,useState} from "react";
 
-const ListCustomer =()=>{
-
+const ListCustomer =(props)=>{
+console.log("pizza ",props.customers)
     const [customers, setCustomers]=useState([])
 
     const getCustomerdata=async()=>{
@@ -34,7 +34,7 @@ const ListCustomer =()=>{
       </tr>
     </thead>
     <tbody>
-     {customers.map(customer =>(
+     {props.customers && props.customers.map(customer =>(
          <tr>
              <td>{customer.customer_id}</td>
              <td>{customer.customer_unique_id}</td>
